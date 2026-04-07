@@ -1,214 +1,166 @@
-# Weather Analytics Dashboard using Power BI, DAX, and Live Weather API 
+🌦️ Weather & Environmental Analytics Platform (Power BI + API + DAX)
 
+A production-grade multi-dashboard Business Intelligence solution built using Power BI, live Weather API, Power Query, and DAX, designed to deliver real-time and forecast-based environmental insights across major cities of Nepal.
 
-A production-style **Power BI weather analytics dashboard** built using a **live Weather API**, **Power Query**, and **DAX** to monitor current weather, air quality, and 7-day forecasts across major cities of Nepal.
+This project demonstrates end-to-end BI development, including API integration, data modeling (star schema), cross-page interactivity, DAX-driven insights, and dashboard design for decision support.
 
-This project demonstrates end-to-end BI workflow skills including **API integration, JSON transformation, data modeling, DAX development, dashboard design, and insight generation**.
+📌 Project Overview
 
----
+This solution is designed as a two-layer analytics system:
 
-## Project Overview
+🔹 1. Main Dashboard (Overview Layer)
+High-level monitoring of weather and AQI
+City selection using interactive slicers
+Summary KPIs and trends
+🔹 2. Detail Dashboard (Drill-Down Layer)
+Dynamic city-level analysis
+Fully synced with main dashboard using slicer synchronization
+Deep insights into forecast, AQI, and environmental metrics
 
-This dashboard was developed to provide a real-time and forecast-based view of environmental conditions in Nepalese cities. It combines live API data with Power BI data modeling and custom DAX measures to create an interactive reporting experience.
+👉 Users can select a city in the main dashboard and seamlessly analyze detailed insights in the secondary dashboard.
 
-The dashboard includes:
+⭐ Key Features
+🌍 Multi-Dashboard Architecture
+Designed a two-page interactive BI system
+Implemented cross-page slicer synchronization
+Enabled seamless drill-down from summary to detailed insights
+⚡ Real-Time Weather Monitoring
 
-- Current weather monitoring
-- 7-day temperature forecast
-- Rain probability analysis
-- Sunrise and sunset timings
-- Air Quality Index tracking
-- KPI cards for weather metrics
-- Best City Insight based on environmental scoring
-- Multi-city comparison
+Tracks current conditions across cities:
 
----
+Temperature
+Humidity
+Wind Speed
+Visibility
+Pressure
+UV Index
+Precipitation
+Weather Condition
+📈 7-Day Forecast Analysis
+Daily temperature trends
+Rain probability visualization
+Forecast comparison across cities
+Trend-based decision support
+🌫️ Air Quality Intelligence (AQI)
 
-## Key Features
+Monitors key pollutants:
 
-### Real-Time Weather Monitoring
-Tracks current weather conditions for major cities, including:
-
-- Temperature
-- Humidity
-- Wind speed
-- Visibility
-- Pressure
-- UV index
-- Precipitation
-- Weather condition
-
-### 7-Day Forecast Analysis
-Displays future weather trends with:
-
-- Daily forecast temperatures
-- Rain probability by day
-- Forecast comparison across cities
-
-### Air Quality Intelligence
-Measures and visualizes:
-
-- PM2.5
-- PM10
-- CO
-- NO2
-- O3
-- SO2
+PM2.5, PM10
+CO, NO2, O3, SO2
 
 Includes:
 
-- AQI status categorization
-- Dynamic DAX-based color coding
-- Health suggestion logic
+AQI categorization logic
+Dynamic color indicators
+Health recommendation insights
+🧠 Smart Insight Engine (DAX-Based)
+City scoring algorithm (weather + AQI + rain)
+Best city recommendation
+Dynamic text insights for decision support
+🔄 Dynamic Filtering & Interactivity
+Synced slicers across dashboards
+Real-time filter propagation using optimized relationships
+Interactive visual responses across all components
+🛠️ Tech Stack
+Power BI
+DAX (Advanced Measures)
+Power Query (M Language)
+REST API Integration
+JSON Transformation
+Data Modeling (Star Schema Design)
+🌐 Data Source
 
-### Best City Insight
-Ranks cities based on a weighted score using:
+Live weather data was fetched using a REST API via Power BI Web connector.
 
-- Lower air pollution
-- More comfortable temperature
-- Lower rain probability
+API Configuration:
+Forecast: 7 Days
+AQI: Enabled
+Alerts: Disabled
 
-This feature transforms raw weather data into an actionable insight.
+Multiple city endpoints were dynamically combined into a unified dataset.
 
----
+🏙️ Cities Included
+Kathmandu
+Pokhara
+Biratnagar
+Birgunj
+Janakpur
+Dharan
+Lumbini
+Bhaktapur
+Lalitpur
+🔄 Data Engineering Workflow
+Connected Power BI to REST API using Web connector
+Extracted JSON data for multiple cities
+Transformed nested JSON using Power Query
+Created structured tables:
+Current
+Forecast_Day
+Forecast_Hour
+Location (dimension table)
+Designed relationships using Location as central dimension
+Removed redundant columns and optimized dataset
+Built reusable DAX measures for KPIs and insights
+Implemented cross-page slicer synchronization
+🧩 Data Model (Star Schema)
 
-## Tech Stack
+The model follows a dimension-driven design:
 
-- **Power BI**
-- **DAX**
-- **Power Query**
-- **REST API**
-- **JSON**
-- **Data Modeling**
+🔹 Dimension Table:
+Location
+🔹 Fact Tables:
+Current
+Forecast_Day
+Forecast_Hour
+Key Design Highlights:
+One-to-many relationships from Location
+Optimized filter propagation
+Improved performance and scalability
+Supports cross-dashboard interactivity
+📊 DAX Highlights
+🔹 KPI Measures
+Current temperature
+Forecast averages
+Humidity, pressure, visibility
+Wind speed, precipitation, UV index
+🔹 AQI Intelligence
+Pollutant-based scoring
+Status classification (Good, Moderate, Hazardous)
+Dynamic color logic
+🔹 Insight Measures
+City ranking algorithm
+Best city recommendation
+Dynamic text-based insights
+💼 Business Value
 
----
+This project simulates a real-world analytics product that supports:
 
-## Data Source
+Environmental monitoring
+Smart city insights
+Data-driven decision making
+Comparative city analysis
+Real-time reporting
 
-Weather data was collected from a live weather API using Power BI's **Web** connector.
+It demonstrates how external API data can be transformed into a scalable BI solution.
 
-### API configuration used
-- Forecast: 7 days
-- AQI: Yes
-- Alerts: No
+🚀 Why This Project Stands Out
 
-Data was fetched separately for multiple Nepalese cities and combined into a unified model for analysis.
+This project goes beyond dashboarding and demonstrates:
 
----
+End-to-end BI pipeline (API → Model → Dashboard)
+Multi-dashboard architecture with drill-down capability
+Cross-page filter synchronization
+Dimensional data modeling (star schema)
+Advanced DAX for insights and business logic
+Real-time analytics integration
+Strong focus on user experience and decision support
+👨‍💻 Author
 
-## Cities Included
+Sanjeeb Sapkota
+Business Analytics | SAP B1 HANA | SQL | Power BI
 
-The dashboard includes major cities of Nepal such as:
+GitHub: https://github.com/sanjeebsapkota
+LinkedIn: https://www.linkedin.com/in/sanjeeb-sapkota-07b625226/
+📜 License
 
-- Kathmandu
-- Pokhara
-- Biratnagar
-- Birgunj
-- Janakpur
-- Dharan
-- Lumbini
-- Bhaktapur
-- Lalitpur
-
----
-
-## Data Preparation Workflow
-
-1. Generated API response using the Weather API Explorer
-2. Connected Power BI to the API using the **Web** connector
-3. Fetched weather data for multiple cities by modifying the location parameter
-4. Loaded each city as a separate query
-5. Combined all city queries into a **Master Table**
-6. Created reference tables for:
-   - `Current`
-   - `Forecast_DAY`
-   - `Forecast_Hour`
-   - `Location`
-7. Removed unnecessary columns
-8. Removed duplicates
-9. Structured relationships using `Location` as the dimension table
-10. Applied DAX measures for business logic and KPI formatting
-
----
-
-## Data Model
-
-The model is designed using a central **Location** table with one-to-many relationships to:
-
-- `Current`
-- `Forecast_DAY`
-- `Forecast_Hour`
-
-This structure supports:
-- accurate filtering
-- reusable city dimension
-- scalable reporting logic
-- better measure design
-
----
-
-## DAX Highlights
-
-This project includes custom DAX measures for:
-
-### AQI Logic
-- pollutant-based AQI color indicators
-- AQI status labels
-- health guidance text
-
-### KPI Measures
-- current temperature
-- average forecast temperature
-- humidity
-- wind speed
-- visibility
-- precipitation
-- pressure
-- UV index
-- last updated date and time
-
-### Insight Measures
-- city scoring logic
-- best city ranking
-- dynamic text output for dashboard insight cards
----
-
-## Business Value
-
-This dashboard is more than a weather report. It demonstrates how live external data can be transformed into an analytical product that supports:
-
-- real-time monitoring
-- city-level comparison
-- environmental awareness
-- decision support
-- KPI-driven reporting
-
-It also reflects practical BI capabilities relevant to **Data Analyst**, **Business Intelligence**, and **Power BI Developer** roles.
----
-## Why This Project Stands Out
-
-This project demonstrates:
-
-- API-to-dashboard pipeline design
-- data transformation using Power Query
-- dimensional modeling in Power BI
-- advanced DAX logic
-- user-focused dashboard design
-- insight generation from raw environmental data
-
----
-
-## Author
-
-**Sanjeeb Sapkota**
-
-Data Analytics | Power BI | SAP B1 HANA | SQL
-
-- GitHub: https://github.com/sanjeebsapkota
-- LinkedIn: https://www.linkedin.com/in/sanjeeb-sapkota-07b625226/
-
----
-
-## License
-
-This project is for portfolio and educational purposes.
+This project is intended for portfolio and educational purposes.
